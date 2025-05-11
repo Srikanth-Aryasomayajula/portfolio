@@ -1,0 +1,1443 @@
+/* Styles for responsive Webpage */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat+Alternates:wght@400;500;600&display=swap');
+
+/* Main html and body */
+html {
+    scrollbar-color: #888 #f0f0f0;    /* Thumb color and track color */
+    scrollbar-width: thin;    /* Makes the scrollbar slimmer */
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    font-family: "Montserrat Alternates", sans-serif;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+/* Header and logo section */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5em 0;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: 1200;
+    margin-left: 1%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25em;
+    flex-wrap: wrap;    /* Allow items to wrap to the next line */
+    justify-content: space-between;    /* Distribute items properly when wrapping */
+    padding: 0;    /* Ensure no extra padding affects layout */
+    margin: 0;    /* Ensure no extra margin affects layout */
+    overflow: hidden;    /* Prevent overflow */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1em;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f00;
+}
+
+/* Menus */
+.menu-box {
+    padding: 1em;
+    border-radius: 0.625em;
+    max-width: 31.25em;
+    max-height: 43.75em;
+    text-align: justify;
+}
+
+.menu-toggle {
+    display: none;
+    /* Hidden in web version */
+}
+
+/* Mode toggle */
+header .mode-toggle {
+    display: flex;
+    align-items: center;
+    border-radius: 1.875em;
+    padding: 0.05em;
+    position: relative;
+    width: auto;
+    box-shadow:
+        0 0.25em 0.375em rgba(0, 0, 0, 0.1),
+        inset 0 0.0625em 0.1875em rgba(0, 0, 0, 0.2);
+}
+
+header .mode-toggle button {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: 0.5em 1.25em;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 1.5625em;
+    transition: color 0.3s ease;
+}
+
+header .mode-toggle .toggle-indicator {
+    position: absolute;
+    top: 0.125em;
+    left: 0.125em;
+    height: calc(100% - 0.25em);
+    width: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 1.5625em;
+    transition: transform 0.3s ease;
+    box-shadow:
+        0 0.125em 0.25em rgba(0, 0, 0, 0.2),
+        0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+}
+
+header .mode-toggle button:first-child.active~.toggle-indicator {
+    transform: translateX(0);
+}
+
+header .mode-toggle button:last-child.active~.toggle-indicator {
+    transform: translateX(100%);
+}
+
+header .mode-toggle button.active {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+header .mode-toggle button:not(.active) {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.25em;
+}
+
+header .mode-toggle button:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Language toggle */
+header .language-toggle {
+    display: flex;
+    align-items: center;
+    border-radius: 1.875em;
+    padding: 0.15em;
+    position: relative;
+    margin-right: 1%;
+    box-shadow:
+        0 0.25em 0.375em rgba(0, 0, 0, 0.1),
+        inset 0 0.0625em 0.1875em rgba(0, 0, 0, 0.2);
+}
+
+header .language-toggle button {
+    position: relative;
+    z-index: 2;
+    padding: 0.5em 1.0em;
+    border: none;
+    background: transparent;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-weight: 400;
+    border-radius: 1.5625em;
+}
+
+header .language-toggle .toggle-indicator {
+    position: absolute;
+    top: 0.125em;
+    left: 0.125em;
+    height: calc(100% - 0.25em);
+    width: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 1.5625em;
+    transition:
+        transform 0.3s ease,
+        width 0.3s ease;
+    box-shadow:
+        0 0.125em 0.25em rgba(0, 0, 0, 0.2),
+        0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+}
+
+header .language-toggle button:first-child.active~.toggle-indicator {
+    transform: translateX(0);
+}
+
+header .language-toggle button:last-child.active~.toggle-indicator {
+    transform: translateX(100%);
+}
+
+header .language-toggle button.active {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+header .language-toggle button:not(.active) {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.125em;
+}
+
+header .language-toggle button:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero section */
+.hero {
+    display: flex;    /* Use flexbox to align columns */
+    flex-direction: row;    /* Stack child elements vertically */
+    justify-content: flex-start;    /* Distribute columns */
+    align-items: center;    /* Center vertically */
+    text-align: center;
+    width: 100%;
+    padding: 1em 0;
+}
+
+/* Photo and frame */
+.hero-photo {
+    width: 12em;    /* Set the photo size */
+    height: 12em;    /* Set the photo size */
+    border-radius: 50%;    /* Make the photo circular */
+    object-fit: cover;
+}
+
+.photo-frame {
+    border-radius: 50%;    /* Make it circular */
+    padding: 0.25em;    /* 0.35em;    /* Space around the photo */
+    display: inline-flex;  /* Adjust to the content's size */
+    justify-content: center;
+    align-items: center;
+    /*width: 12.5em;    /* Ensure the frame is square */
+    /*height: 12.5em;    /* Same as width for a perfect circle */
+    box-sizing: border-box;    /* Ensure padding does not affect the size */
+    margin-left: 2%;
+}
+
+/* Title section */
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5em;
+    align-items: center;
+    text-align: center;    /* Ensures text inside is also centered */
+    width: 100%;    /* Ensures full width */
+}
+
+.title h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.title p {
+    font-size: 1.2em;
+    margin-top: 0.25em;
+    margin-bottom: 0;
+}
+
+/* Container to hold left and right columns */
+.container {
+    display: flex;
+    width: 100%;    
+    height: auto;
+    min-height: 100vh;    /* Full height of the viewport */
+    flex-direction: row;    /* Ensure items are laid out horizontally */
+    align-items: stretch; /* Make all boxes the same height */
+    
+}
+
+.container h1 {
+    font-size: 1.5em;
+}
+
+.container p {
+    font-size: 1.2em;
+}
+
+/* Left Column */
+.left-column {
+    flex: 1;    /* Allows the column to take up available space */
+    width: 40%;   
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    /* Stack items vertically */
+    align-items: center;    /*padding: 0.625em;*/
+    gap: 1.25em;    /* Add spacing between sections */
+    min-height: 100%;  
+    /*margin-bottom: -1.25em;*/
+    box-sizing: border-box;
+    color: #fff;
+}
+
+/* Right Column */
+.right-column {
+    width: 60%;
+    max-width: 60%; /* Constrain maximum width to 60% of the container */
+    /*padding: 0.625em;*/
+    color: #fff;
+    display: flex;    /* Flex container */
+    flex-direction: column;    /* Stack sections vertically */
+    gap: 1.25em;    /* Add spacing between sections */
+    height: auto;    /* 100% */
+    box-sizing: border-box;
+    margin-left: 0%;    /* Move the right column to the right */
+    /*margin-bottom: -1.25em;*/
+    flex-shrink: 1; /* Allow column to shrink */
+}
+
+.right-column .section {
+    display: flex;    /* Ensure content is aligned */
+    flex-direction: column;
+    align-items: center;    /* Center content horizontally */
+    flex: 1;    /* Allow the sections to take up space */
+}
+
+.right-column h1 {
+    font-size: 2rem;
+}
+
+.right-column p {
+    font-size: 1.2rem;
+}
+
+/* About me section */
+.about-me {
+    padding: 1.25em;
+    border-radius: 0.625em;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 95%;
+    max-width: 100%;
+    max-height: 1000%;
+    margin-bottom: 0em;
+    justify-content: center;
+    text-align: justify;
+    font-size: 1em;
+    overflow-wrap: break-word;    /* Ensure long words wrap to the next line */
+    word-wrap: break-word;    /* For legacy browsers */
+    box-sizing: border-box;    /* Include padding and border in dimensions */
+    overflow: auto;        /* Add scrolling if content exceeds box height */
+}
+
+
+
+
+
+
+
+/* Section under the left column in which its contents are present */
+.left-section {
+    /*padding: 1.25em 1.25em;*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-start; /* Aligns content vertically to the top */
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.left-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.left-section h2 {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    font-size: 2em;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.625em;
+    flex-wrap: wrap;    /* Allows stars to wrap if they exceed the box width */
+    justify-content: left;    /* Centers stars horizontally within the box */
+    align-items: center;    /* Centers stars vertically within the box */
+    overflow: hidden;    /* Ensures stars don't spill out of the box */
+    max-width: 100%;    /* Limits the width to the container */
+}
+
+.star {
+    font-size: 1.5em;
+    position: relative;
+    color: #f0f0f0;
+    text-shadow: -0.0625em -0.0625em 0.0625em rgba(0, 0, 0, 0.3), 0.0625em 0.0625em 0.0625em rgba(255, 255, 255, 0.7);
+    filter: drop-shadow(0.125em 0.125em 0.125em rgba(0, 0, 0, 0.4));
+    transition: transform 0.2s ease;
+}
+
+.star-wrapper {
+    display: inline-block;
+    perspective: 31.25em;
+}
+
+.star.filled {
+    color: gold;
+    text-shadow:
+        -0.0625em -0.0625em 0.0625em rgba(218, 165, 32, 0.5),
+        0.0625em 0.0625em 0.0625em rgba(255, 215, 0, 0.7);
+    transform: scale(1.05) rotateX(10deg);
+}
+
+.star-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: gold;
+    text-shadow:
+        -0.0625em -0.0625em 0.0625em rgba(218, 165, 32, 0.5),
+        0.0625em 0.0625em 0.0625em rgba(255, 215, 0, 0.7);
+}
+
+.star:hover {
+    transform: scale(1.1) rotateX(15deg);
+}
+
+/* Section under the right column in which its contents are present */
+.right-section {
+    /*padding: 1.25em 1.25em;*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers content horizontally */
+    justify-content: center; 
+}
+
+.right-section.visible {
+    width: 100%;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.right-section h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.05em;
+    font-size: 2em;
+}
+
+.right-section h3 {
+    font-size: 1.17em;
+    margin-top: 0;
+}
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.25em;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 0.625em;
+}
+
+.skill {
+    padding: 0.625em;
+    border-radius: 0.625em;
+    display: flex;
+    flex-direction: column;
+    width: 12em;
+    max-height: 100%;
+    text-align: justify;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+    flex-shrink: 1; /* Allow box to shrink */
+    margin-right: 0.625em;
+    overflow-wrap: break-word;    /* Ensure long words wrap to the next line */
+    word-wrap: break-word;    /* For legacy browsers */
+    box-sizing: border-box;    /* Include padding and border in dimensions */
+}
+
+.skill h3 {
+    margin: 0;
+}
+
+.skill p {
+    margin: 0;
+}
+
+/* Experiences section */
+.experiences {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.25em;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 2em;
+}
+
+.experience {
+    padding: 1.25em;
+    border-radius: 0.625em;
+    width: 35%;
+    max-height: 60%;
+    text-align: left;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.experience h3 {
+    margin: 0;
+    font-size: 0.92em;
+    flex-wrap: wrap;    /* Allows stars to wrap if they exceed the box width */
+    justify-content: left;    /* Centers stars horizontally within the box */
+    align-items: center;    /* Centers stars vertically within the box */
+    overflow: hidden;    /* Ensures stars don't spill out of the box */
+    max-width: 100%;    /* Limits the width to the container */
+}
+
+.experience p {
+    margin: 0.125em 0 0;
+}
+
+/* Experience overlay page */
+.experience-overlay {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+    z-index: 9999;
+    border-radius: 0.625em;
+    padding: 1.25em;
+    overflow-y: auto;
+    scrollbar-color: #888 #f0f0f0;
+    scrollbar-width: thin;
+    transform: translateY(-50%);
+    /* Vertically center the overlay */
+}
+
+.experience-overlay::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.experience-overlay::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.experience-overlay::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.new-page, .back-button, .download-button {
+    display: inline-block;
+    padding: 0.625em 1.25em;
+    background-color: #0000ff;    /* Background color */
+    color: #fff;    /* Text color */
+    border-radius: 0.3125em;    /* Optional: rounded corners */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover, .download-button:hover {
+    background-color: #444;
+    /* Darker shade when hovering */
+}
+
+/* Box behind Title and Subtitle */
+.new-page-title-box {
+    background-color: rgba(0, 0, 0, 0.8);    /* Semi-transparent background */
+    color: #fff;    /* White text */
+    text-align: center;    /* Center text */
+    padding: 1em;    /* Space around the text */
+    border-radius: 8px;    /* Rounded corners */
+    margin: 1em auto;    /* Center horizontally */
+    width: 80%;    /* Adjust width as needed */
+}
+
+/* Timeline section */
+.timeline-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-family: "Montserrat Alternates", sans-serif;
+    gap: 0.5em; /* Add spacing between date, bracket, and arrow-line */
+}
+
+.timeline-group {
+    display: flex;
+    align-items: center;
+    width: 40%; /* Ensure it adjusts dynamically */
+    flex-shrink: 1; /* Allow the group to shrink */
+    position: relative;
+    gap: 0.5em;
+}
+
+.timeline-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+    margin-left: 0.625em;
+    margin-right: 0.625em;
+    z-index: 1; /* Ensure date stays above the line */
+    font-size: 1em; /* Adjust font size dynamically if needed */
+    width: 50%;
+}
+
+.timeline-line {
+    flex-grow: 1; /* Allow the line to expand to fill space */
+    height: 0.125em; /* Fixed height for the line */
+    background-color: #ffffff;
+    position: relative;
+    width: 20em;
+}
+
+.timeline-line::before {
+    content: ']'; /* Bracket symbol */
+    font-size: 5em; /* Adjust size dynamically */
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    position: absolute;
+    left: -0.3em; /* Position just before the line */
+    transform: translateY(-50%);
+}
+
+.timeline-line::after {
+    content: ''; /* Arrowhead */
+    position: absolute;
+    right: -1em;
+    top: 50%; /* Align with the center of the line */
+    width: 0;
+    height: 0;
+    margin-right: 0.75em;
+    border-left: 0.5em solid transparent; /* Arrow sides */
+    border-right: 0.5em solid transparent;
+    border-top: 1em solid #ffffff; /* Arrow color */
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.timeline-box {
+    padding: 0.625em;
+    border-radius: 0.625em;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Allow the box to shrink */
+    flex-grow: 0; /* Allow the box to grow if there’s extra space */
+    /*min-width: 10em; /* Set a minimum width to avoid excessive shrinking */
+    max-width: 20em; /* Limit the maximum width for large screens */
+    width: 100%; /* Make it responsive */
+    max-height: 100%;
+    text-align: justify;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+    margin-right: 0.625em;
+    box-sizing: border-box; /* Ensure padding is included in the total size */
+    overflow-wrap: break-word;        /* Ensure long words wrap to the next line */
+    word-wrap: break-word;        /* For legacy browsers */
+}
+
+
+
+.timeline-box:hover {
+    cursor: pointer;
+    transform: scale(1.05);    /* Slightly scale up */
+}
+
+.timeline-box:active {
+    transform: scale(1.02);    /* Subtle shrink effect */
+}
+
+.timeline-content h3 {
+    margin: 0;
+    color: #fff;
+    width: 100%;
+    max-height: 90%;
+    align-items: justify;
+}
+
+.timeline-content p {
+    color: #ccc;
+    width: 100%;
+    max-height: 90%;
+    align-items: justify;
+}
+
+/* Subjects Section - Two-column Layout */
+.subjects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;    /* Two equal columns */
+    gap: 1em;    /* Spacing between boxes */
+    margin: 2em auto;    /* Center the grid */
+    width: 80%;    /* Adjust width as needed */
+}
+
+/* Box for Individual Subjects */
+.subject-box {
+    padding: 1em;    /* Space around text */
+    border: 1px solid #ccc;    /* Subtle border */
+    border-radius: 5px;    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    /* Soft shadow */
+}
+
+/* Align Content with the Arrow */
+.subjects-grid {
+    justify-content: center;    /* Center the grid content horizontally */
+}
+
+.certificates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25em;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    max-height: 100%;
+}
+
+.certificate-box {
+    /*background: linear-gradient(145deg, #222, #333);*/
+    /*box-shadow: 0 -0.625em 1.25em rgba(0, 0, 255, 0.8), 0 0.625em 1.25em rgba(255, 0, 0, 0.8);*/
+    padding: 0.625em;
+    border-radius: 0.625em;
+    width: 17.5em;
+    max-height: 100%;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+}
+
+.certificate-box:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    /* Slightly scale up */
+    /*box-shadow: 0 -0.9375em 1.5625em rgba(0, 0, 255, 0.9), 0 0.9375em 1.5625em rgba(255, 0, 0, 0.9);*/
+}
+
+.certificate-box:active {
+    transform: scale(1.02);
+    /* Subtle shrink effect */
+    /*box-shadow: 0 -0.625em 1.25em rgba(0, 0, 255, 0.8), 0 0.625em 1.25em rgba(255, 0, 0, 0.8);*/
+}
+
+.certificate-content h3 {
+    margin: 0;
+    color: #fff;
+    width: 100%;
+    max-height: 90%;
+    align-items: justify;
+}
+
+.certificate-content p {
+    color: #ccc;
+    width: 100%;
+    max-height: 90%;
+    align-items: justify;
+}
+
+.certificate-overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+}
+
+.certificate-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 1em;
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.certificate-viewer {
+    width: 100%;
+    height: 80%;
+    border: none;
+    margin-bottom: 1em;
+}
+
+/* Partial width section for Contact */
+.contact {
+    width: 60%;
+    height: 60%;
+    padding: 1.25em;
+    /*background: linear-gradient(145deg, #222, #333);*/
+    /*box-shadow: 0 -0.625em 1.25em rgba(0, 0, 255, 0.8), 0 0.625em 1.25em rgba(255, 0, 0, 0.8);*/
+    /*color: #fff;*/
+    text-align: center;
+    box-sizing: border-box;
+    margin: 1em auto; /* This centers the element horizontally */
+    /*margin-top: 1.5em;
+    margin-bottom:1.5em;*/
+    border-radius: 0.625em;
+}
+
+#contact-content p {
+    margin-bottom: 1.25em; /* Add space between paragraphs */
+    line-height: 1; /* Ensure proper spacing within each paragraph */
+}
+
+/* Full width section for Footer */
+.full-width {
+    width: 100%;
+    padding: 1.25em;
+    /*background-color: #222; /* Dark background for contrast */
+    /*color: #fff;*/
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto; /* This centers the element horizontally */
+}
+
+/* Hyperlinks */
+a {
+    color: #009dffe8;
+    /* Use any color you prefer */
+    /*text-decoration: none; /* Optional: Remove underline */
+    transition: color 0.3s;
+    /* Optional: Add a hover transition */
+}
+
+a:hover {
+    color: #ff0000;
+    /* Optional: Change color on hover */
+}
+
+a:visited {
+    color: #89cfef;
+    /* Ensures visited links have the same color */
+}
+
+/* Scroll-to-top button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1.25em;
+    right: 1.25em;
+    display: none; /* Hidden by default */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3.125em;
+    height: 3.125em;
+    font-size: 1.25em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.375em 0.625em rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-btn:active {
+    transform: scale(0.95);
+}
+
+.scroll-top-btn.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top-btn.hidden {
+    opacity: 0;
+    transform: translateY(1.25em);
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 767px) {
+
+    /* Header and logo section */
+    header {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+    }
+
+    header .logo {
+        font-size: 90%;
+        margin-left: 0%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5em;        /* Adjust the gap for smaller screens */
+        align-items: flex-start;        /* Align items to the start */
+        display: none;        /* Hide menu by default */
+        position: absolute;
+        top: 25%;
+        left: 12%;
+        width: auto;
+        background: #636363;
+        padding: 1em;
+    }
+
+    header nav ul.active {
+        display: flex;
+        animation: slideOut 0.8s ease-out forwards;
+        max-height: 450px;
+    }
+
+    /* Menus */
+    header .menu-toggle {
+        display: block;
+        background: none;
+        color: #fff;
+        border: none;
+        font-size: 150%;
+        cursor: pointer;
+        padding: 0 1em;
+    }
+
+    .menu-box {
+        font-size: 70%;
+        width: 90%;
+    }
+
+    /* Mode toggle */
+    header .mode-toggle {
+        border-radius: 1.5em;
+        transform: scale(0.9);        /* Scale down the entire button */
+    }
+
+    header .mode-toggle button.active {
+        font-size: 100%;
+    }
+
+    header .mode-toggle button:not(.active) {
+        font-size: 100%;
+    }
+
+    header .mode-toggle button:hover:not(.active) {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Language toggle */
+    header .language-toggle {
+        border-radius: 1.5em;
+        transform: scale(0.8);        /* Scale down the entire button */
+        /*padding: 0.1em;*/
+    }
+
+    header .language-toggle button.active {
+        font-size: 100%;
+    }
+
+    header .language-toggle button:not(.active) {
+        font-size: 100%;
+    }
+
+    /* Hero section */
+    .hero {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 45%;
+    }
+
+    .hero p {
+        font-size: 40%;
+    }
+
+    /* photo frame section to be aligned vertically */
+    .photo-frame {
+        width: 50%;
+        height: auto;
+        aspect-ratio: 1 / 1;        /* Ensures the height matches width */
+        /*text-align: center;*/
+    }
+
+    .hero-photo {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;        /* Ensures the height matches width */
+        object-fit: cover;        /* Ensures the image fills the frame */
+    }
+
+    /* Title section */
+    .title {
+        text-align: center;
+    }
+
+    .title h1 {
+        /*margin-top: 50%;*/
+        font-size: 90%;
+    }
+
+    .title p {
+        font-size: 75%;
+    }
+
+    /* Container which contains left and right column */
+    .container {
+        display: flex;
+        flex-direction: column;        /* Stack all sections vertically */
+    }
+
+    /* Left column */
+    .left-column {
+        width: 100%;
+        height: auto;
+        flex-direction: column;        /* Ensure all children are in a single column */
+    }
+
+    /* Left section */
+    .left-section {
+        width: 100%;
+        height: auto;
+        flex-direction: column;        /* Ensure all children are in a single column */
+    }    
+
+    .left-section h2 {
+        font-size: 1.3em;
+    }  
+
+    .left-section h3 {
+        font-size: 1.3em;
+    }     
+
+    /* Right column */
+    .right-column {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        justify-content: center;
+        flex-direction: column;        /* Ensure all children are in a single column */
+    }
+
+    /* Right section */
+    .right-section {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        flex-direction: column;        /* Ensure all children are in a single column */
+    }
+
+    .right-section h2 {
+        font-size: 1.3em;
+    }  
+
+    .right-section h3 {
+        font-size: 1.3em;
+    } 
+
+    /* Experiences section */
+    .experiences {
+        width: 100%;
+    }
+
+    /* Timeline section */
+    .timeline-item {
+        width: 85%;
+    }
+
+    .timeline-date {
+        width: 700%;
+        font-size: 95%;
+    }
+
+    .timeline-box {
+        font-size: 80%;
+        width: 70%;
+    }
+
+    .timeline-box p{
+        font-size: 99%;
+    }
+
+    /* Certificates section */
+    .certificates {
+        gap: 0.625em;
+        margin-bottom: 0.625em;
+    }
+
+    .certificate-box {
+        margin: 0;
+        width: 40%;
+        font-size: 90%;
+    }
+
+    .certificate-box p {
+        font-size: 99%;
+    }    
+
+    /* About me section */
+    .about-me {
+        font-size: 0.8em;
+        width: 95%;
+        overflow: auto;        /* Add scrolling if content exceeds box height */
+        box-sizing: border-box;        /* Include padding in width calculation */
+    }
+
+    /* Skills section */
+    .skill {
+        width: 40%;
+    }
+        
+    .skill h3 {
+        font-size: 90%;
+    }
+
+    .skill p {
+        font-size: 90%;
+    }
+
+    /* Experience overlay page */
+    .experience-overlay {
+        font-size: 80%;
+    }
+
+    .experience-overlay img {
+        width: 150%;
+        height: auto;        /* Maintain aspect ratio */
+        display: block;        /* Ensures proper centering behavior */
+        margin: 0 auto;        /* Horizontally center-aligns the image */
+    }
+
+    /* Box behind Title and Subtitle */
+    .new-page-title-box {
+        font-size: 50%;        /* Adjust font size of title box */
+    }
+
+    /* Target only the .experience-overlay in the 'experience-newpages' page */
+    body.experience-newpages {
+        overflow: hidden;        /* Disable body scrolling when the overlay is active */
+        touch-action: none;        /* Prevent touch interactions on the body when overlay is active */
+    }
+
+    /* Styling for the .experience-overlay */
+    body.experience-newpages .experience-overlay {
+        transform-origin: center center;
+        transition: transform 0.4s ease;        /* Smooth zoom effect */
+        will-change: transform;        /* Optimize performance for transformations */
+    }
+
+    /* Apply scaling to the overlay when it's active */
+    body.experience-newpages .experience-overlay.active {
+        transform: scale(1);        /* Ensure overlay maintains proper zoom */
+    }
+
+    /* Ensure touch events and zoom/pan only affect the overlay */
+    body.experience-newpages .experience-overlay {
+        position: fixed;        /* Keeps the overlay fixed in place */
+        transform: translate(-50%, -50%);        /* Centers the overlay exactly */
+        z-index: 9999;        /* Ensures the overlay is above everything else */
+    }
+
+    /* Ensure only the overlay is zoomable and interacts with touch events */
+    body.experience-newpages .experience-overlay.active {
+        touch-action: manipulation;        /* Allows touch actions like zoom/pan on the overlay only */
+        overflow: auto;        /* Ensure overflow works within the overlay */
+    }
+
+    /* Contact section */
+    .contact {
+        width: 90%;
+        height: auto;
+        padding: 0.25em;
+    }
+
+    .contact table {
+        width: 100%;
+        font-size: 90%;
+    }
+
+    /* Order of appearance on mobile site */
+    /*.right-column {
+        order: 2;
+    }
+
+    .left-column {
+        order: 1;
+    }*/
+
+
+    .right-column #experiences {
+        order: 2;        /* Ensures the experiences section appears first */
+    }
+
+    .right-column #education {
+        order: 3;
+    }
+
+    .right-column #certificates {
+        order: 4;
+    }
+
+    .left-column #about {
+        order: 1;
+    }
+
+    .left-column #skills {
+        order: 5;
+    }
+}
+
+
+/* Responsive layout for smaller mobile */
+@media (max-width: 400px) {
+    header .menu-toggle {
+        margin-left: -5%;
+    }
+
+    header nav ul {
+        left: 8%;
+    }
+
+    header .logo {
+        font-size: 80%;
+        margin-left: -5%;
+    }
+
+    /* photo frame section to be aligned vertically */
+    .photo-frame {
+        width: 45%;
+        height: auto;
+        aspect-ratio: 1 / 1;        /* Ensures the height matches width */
+    }
+
+    /* Mode toggle */
+    header .mode-toggle {
+        transform: scale(0.75);        /* Scale down the entire button */
+    }
+
+    /* Language toggle */
+    header .language-toggle {
+        left: -5%;
+        transform: scale(0.7);        /* Scale down the entire button */
+    }
+
+    .title h1 {
+        font-size: 83%;
+    }
+
+    .title p {
+        font-size: 60%;
+    }
+
+    .left-section h2 {
+        font-size: 1.1em;
+    }  
+
+    .left-section h3 {
+        font-size: 1em;
+    } 
+
+    .right-section h2 {
+        font-size: 1.1em;
+    }  
+
+    .right-section h3 {
+        font-size: 1em;
+    } 
+
+    .skill h3 {
+        font-size: 80%;
+    }
+
+    .skill p {
+        font-size: 80%;
+    }
+
+    .timeline-item {
+        width: 93%;
+    }
+
+    .timeline-box {
+        width: 60%;
+    }
+
+    .timeline-box p{
+        font-size: 95%;
+    }
+
+    .timeline-date{
+        width: 700%;
+        font-size: 80%;
+    }
+
+    .certificate-box {
+        font-size: 80%;
+    }
+
+    .certificate-box p {
+        font-size: 80%;
+    }
+
+    .contact h2 {
+        font-size: 1.2em;
+    }
+
+    .contact table {
+        font-size: 75%;
+    }
+}
+
+/* Responsive layout for smaller laptop and some tablets */
+@media (min-width: 768px) and (max-width: 1281px) {
+
+    header .logo {
+        margin-left: -10%;
+    }
+
+
+    /* Mode toggle */
+    header .mode-toggle {
+        transform: scale(0.95);        /* Scale down the entire button */
+    }
+
+    /* Language toggle */
+    header .language-toggle {
+        left: -5%;
+        transform: scale(0.95);        /* Scale down the entire button */
+    }
+
+
+
+    .left-section h2 {
+        font-size: 1.4em;
+    }  
+
+    .left-section h3 {
+        font-size: 1.2em;
+    } 
+
+    .right-section h2 {
+        font-size: 1.4em;
+    }  
+
+    .right-section h3 {
+        font-size: 1.2em;
+    } 
+
+    .skill {
+        width: 42%;
+    }
+
+    .skill h3 {
+        font-size: 80%;
+    }
+
+    .skill p {
+        font-size: 80%;
+    }
+
+    .certificate-box {
+        font-size: 90%;
+        width: 40%;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: 0.5em;
+    }
+
+    .certificate-box p {
+        font-size: 98%;
+    }
+
+    .timeline-box {
+        width: 55%;
+    }
+
+    .timeline-box p {
+        font-size: 90%;
+    }
+
+    .timeline-date {
+        width: 200%;
+    }
+
+    .contact h2 {
+        font-size: 1.2em;
+    }
+
+    .contact table {
+        font-size: 75%;
+    }    
+
+
+
+    /* Menus */
+    header .menu-toggle {
+        display: block;
+        background: none;
+        color: #fff;
+        border: none;
+        font-size: 150%;
+        cursor: pointer;
+        padding: 0 1em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5em;        /* Adjust the gap for smaller screens */
+        align-items: flex-start;        /* Align items to the start */
+        display: none;        /* Hide menu by default */
+        position: absolute;
+        top: 25%;
+        left: 12%;
+        width: auto;
+        background: #636363;
+        padding: 1em;
+    }
+
+    header nav ul.active {
+        display: flex;
+        animation: slideOut 0.8s ease-out forwards;
+        max-height: 600px;
+        width: auto;
+    }
+
+    .menu-box {
+        font-size: 80%;
+        width: 90%;
+    }
+}

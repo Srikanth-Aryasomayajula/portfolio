@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAE Trainee (Crash Simulations) - Seating System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="experience-newpages">
+    <a class="new-page">Back</a>
+
+    <main>
+        <!-- Box for Title and Subtitle -->
+        <div class="new-page-title-box">
+            <h1>CAE Trainee (Crash Simulations) - Seating System</h1>
+            <h3>ELENO-ELC, Pune</h3>
+        </div>
+
+            
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; text-align: center;">
+                <h2 style="text-align: center;">Tasks</h2>
+				<img src="eleno-flowchart-en.jpg" alt="masterthesis-setup-1" style="width: 50%; height: auto; position: relative;">
+                
+                <!-- Task-1 (a) -->
+                <div style="width: 80%; text-align: justify; margin-left: 8em; margin-right: 8em;">
+                    <h2>Task-1 (a): Basic Simulations - Crush Can (Crashbox) Analysis</h2>
+                    <table style="width: 100%; text-align: left; margin-top: 1em; padding: 8px;">
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Project</strong></td>
+                            <td style="padding: 8px; width: 70%;">Slow speed impact on crush can</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Aim</strong></td>
+                            <td style="padding: 8px; width: 70%;">Perform study mesh convergence, understand the concept of time integration, mass scaling, and failure analysis using LSPP</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Approach</strong></td>
+                            <td style="padding: 8px; width: 70%;">Initial mesh size 6mm is taken and mesh convergence study is performed, followed by failure analysis with different thicknesses of the crashbox to propose the best model for crashbox for the given dimensions.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Units</strong></td>
+                            <td style="padding: 8px; width: 70%;">ton, mm, sec, N, MPa, N-mm (mJ)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Vehicle mass</strong></td>
+                            <td style="padding: 8px; width: 70%;">1.2 ton (lumped)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Initial velocity</strong></td>
+                            <td style="padding: 8px; width: 70%;">10 kmph (2777.7 mm/s)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h2 style="margin-bottom: 1em;">Results with 6mm mesh</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="crashbox-result.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="crashbox-graph1-en.jpg" alt="crashbox-graph1-en" style="width: 70%; height: auto; position: relative;">
+                <img src="crashbox-graph2-en.jpg" alt="crashbox-graph2-en" style="width: 70%; height: auto; position: relative;">
+
+                <h2 style="margin-bottom: 1em;">Results of mesh convergence</h2>
+                <img src="crashbox-graph3-en.jpg" alt="crashbox-graph3-en" style="width: 70%; height: auto; position: relative;">
+
+                <h2 style="margin-bottom: 1em;">Failure analysis with different thicknesses of the crush can</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="crashbox-result-1mm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="crashbox-result-1.2mm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="crashbox-result-1.4mm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2 style="margin-bottom: 1em;">Rebound time vs. crashbox thickness plot</h2>
+                <img src="crashbox-graph4-en.jpg" alt="crashbox-graph4-en" style="width: 70%; height: auto; position: relative;">
+                
+
+
+                <!-- Task-1 (b) -->
+                <div style="width: 80%; text-align: justify; margin-left: 8em; margin-right: 8em;">
+                    <h2>Task-1 (b): Basic Simulations - Rear Underrun Protection Device  (RUPD) Analysis</h2>
+                    <table style="width: 100%; text-align: left; margin-top: 1em; padding: 8px;">
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Project</strong></td>
+                            <td style="padding: 8px; width: 70%;">Quasistatic analysis on RUPD</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Aim</strong></td>
+                            <td style="padding: 8px; width: 70%;">Perform quasistatic analysis as per BIS14812:2005 (2005 (Automotive vehicle rear under run protective device) and find out appropriate results by using LSPP</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Units</strong></td>
+                            <td style="padding: 8px; width: 70%;">ton, mm, sec, N, MPa, N-mm (mJ)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Assumption</strong></td>
+                            <td style="padding: 8px; width: 70%;">Weight of the truck = 1.8 ton</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Loading</strong></td>
+                            <td style="padding: 8px; width: 70%;">As per BIS 14812:2005</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h2 style="margin-bottom: 1em;">Applied loads</h2>
+                <img src="rupd-loadapplied-en.jpg" alt="rupd-loadapplied-en" style="width: 70%; height: auto; position: relative;">
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="rupd-results-2mm-en.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="rupd-graph1-en.jpg" alt="rupd-graph1-en-en" style="width: 70%; height: auto; position: relative;">
+
+                <h2 style="margin-bottom: 1em;">With rigid stiffeners (2mm thick) and rigid brackets (10mm)</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="rupd-results-2mm-with-brackets-en.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="rupd-graph2-en.jpg" alt="rupd-graph2-en" style="width: 70%; height: auto; position: relative;">
+
+                <h2 style="margin-bottom: 1em;">RUPD thickness = 1.2 mm (no stiffeners)</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="rupd-results-1.2mm-without-stiffeners-en.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="rupd-graph3-en.jpg" alt="rupd-graph2-en" style="width: 70%; height: auto; position: relative;">
+
+                <h2 style="margin-bottom: 1em;">RUPD thickness = 1.3 mm (no stiffeners)</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="rupd-results-1.3mm-en.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="rupd-graph4-en.jpg" alt="rupd-graph2-en" style="width: 70%; height: auto; position: relative;">
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="rupd-results-v-m.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="rupd-graph5-en.jpg" alt="rupd-graph2-en" style="width: 70%; height: auto; position: relative;">
+
+
+
+
+                <!-- Task-2 -->
+                <div style="width: 80%; text-align: justify; margin-left: 8em; margin-right: 8em;">
+                    <h2>Task-2: Modal Analysis of a Seat</h2>
+                    <table style="width: 100%; text-align: left; margin-top: 1em; padding: 8px;">
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Aim</strong></td>
+                            <td style="padding: 8px; width: 70%;">To find the modal frequencies of a seat</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h2 style="margin-bottom: 1em;">Freq = 22.0 Hz</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="modalanalysis-22hz.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2 style="margin-bottom: 1em;">Freq = 30.4 Hz</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="modalanalysis-30hz.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2 style="margin-bottom: 1em;">Freq = 36.8 Hz</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="modalanalysis-36hz.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 style="margin-bottom: 1em;">Freq = 41.3 Hz</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="modalanalysis-41hz.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2 style="margin-bottom: 1em;">Freq = 51.6 Hz</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="modalanalysis-51hz.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 style="margin-bottom: 1em;">Freq = 52.1 Hz</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="modalanalysis-52hz.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+
+
+
+                <!-- Task-3 -->
+                <div style="width: 80%; text-align: justify; margin-left: 8em; margin-right: 8em;">
+                    <h2>Task-3: Luggage retention test</h2>
+                    <table style="width: 100%; text-align: left; margin-top: 1em; padding: 8px;">
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Project</strong></td>
+                            <td style="padding: 8px; width: 70%;">Explicit Analysis on seating system during the frontal impact</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Aim</strong></td>
+                            <td style="padding: 8px; width: 70%;">Perform luggage retention test as per ECE R17 and find out appropriate results by using LSPP</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Units</strong></td>
+                            <td style="padding: 8px; width: 70%;">ton, mm, sec, N, MPa, N-mm (mJ)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h2 style="margin-bottom: 1em;">Results</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="lr-result1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="lr-simulation-1-en.jpg" alt="lr-simulation-1-en" style="width: 70%; height: auto; position: relative;">
+                <img src="lr-graph1-en.jpg" alt="lr-graph1-en" style="width: 70%; height: auto; position: relative;">
+                <img src="lr-graph2-en.jpg" alt="lr-graph2-en" style="width: 70%; height: auto; position: relative;">
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="lr-result2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="lr-graph3-en.jpg" alt="lr-simulation-1-en" style="width: 70%; height: auto; position: relative;">
+
+
+
+
+
+
+
+                <!-- Task-4 -->
+                <div style="width: 80%; text-align: justify; margin-left: 8em; margin-right: 8em;">
+                    <h2>Task-4: Seat Belt Anchorage Analysis</h2>
+                    <table style="width: 100%; text-align: left; margin-top: 1em; padding: 8px;">
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Aim</strong></td>
+                            <td style="padding: 8px; width: 70%;">Test seat belt anchorage as per ECE R14</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Units</strong></td>
+                            <td style="padding: 8px; width: 70%;">ton, mm, sec, N, MPa, N-mm (mJ)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; width: 30%;"><strong>Passing criteria</strong></td>
+                            <td style="padding: 8px; width: 70%;">The seat should sustain the loads (even if the tracks peel or a bent bracket) and also the passing criteria is same as luggage retention test (w.r.t. H-, H+100- and H+150-planes)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h2 style="margin-bottom: 1em;">Simulation Setup and Loads</h2>
+                <img src="sba-simulation1-en.jpg" alt="sba-simulation1-en" style="width: 70%; height: auto; position: relative;">
+                <h2 style="margin-bottom: 1em;">Anchorage Points</h2>
+                <img src="sba-simulation2-en.jpg" alt="sba-simulation2-en" style="width: 70%; height: auto; position: relative;">
+                <img src="sba-simulation3-en.jpg" alt="sba-simulation3-en" style="width: 70%; height: auto; position: relative;">
+                <h2 style="margin-bottom: 1em;">Displacements at Pretension Loads</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="sba-results1-en.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2 style="margin-bottom: 1em;">Displacements at Full Loads</h2>
+                <video controls style="width: 70%; height: auto; position: relative;">
+                    <source src="sba-results2-en.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2 style="margin-bottom: 1em;">Force and Energy Analysis</h2>
+                <img src="sba-graph1-en.jpg" alt="sba-graph1-en" style="width: 70%; height: auto; position: relative;">
+                <img src="sba-graph2-en.jpg" alt="sba-graph2-en" style="width: 70%; height: auto; position: relative;">
+                <img src="sba-graph3-en.jpg" alt="sba-graph3-en" style="width: 70%; height: auto; position: relative;">
+
+
+
+
+
+
+
+            </div>
+        </div>
+		
+		<div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 80%; text-align: center;">
+                <h2 style="text-align: center; margin-top: 4em;">Tools</h2>
+            </div>
+        </div>
+		
+        <!-- Two-column layout for tools -->
+        <div class="subjects-grid">
+            <div class="subject-box">LS-DYNA</div>
+            <div class="subject-box">LS-PrePost</div>
+            <div class="subject-box">HyperMesh</div>
+            <div class="subject-box">HyperView</div>
+            <div class="subject-box">MS PowerPoint</div>
+            <div class="subject-box">MS Excel</div>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 80%; text-align: justify;">
+                <h2 style="text-align: center;">About the company</h2>
+                <p>Based in Pune, India, the ELENO Engineering Learning Center (ELENO-ELC) is a renowned CAE training facility that specializes in offering expert-led courses in LS-DYNA, Hypermesh, and other cutting-edge engineering technologies to mechanical engineers. With an emphasis on practical instruction, real-world projects, and career-focused mentoring, ELENO gives students the tools they need to succeed in the cutthroat CAE field. Under the direction of seasoned professionals in the field, the institution provides extensive membership plans customized to meet the objectives of each member as well as placement support at leading OEMs, Tier 1 businesses, and defense agencies. ELENO is committed to developing future engineers into professionals who are prepared for the workforce.</p>
+                <p><strong>Company Link: </strong><a href="https://eleno-elc.com/">ELENO-ELC</a></p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

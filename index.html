@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio - Venkata Srikanth Aryasomayajula</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap&subset=latin-ext"
+		rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
+	<!-- REMIXICONS -->
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+	<header>
+		<button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+		<a href="https://srikanth-portfolio.freewebhostmost.com/index.html" style="all: unset; cursor: pointer; white-space: nowrap;">
+			<div class="logo">Venkata Srikanth<br>Aryasomayajula</div>
+		</a>
+
+		<nav>
+			<ul>
+				<li class="menu-box"><a href="#about" id="menu-about" onclick="adjustScroll(event, 'about')">Über
+						mich</a></li>
+				<li class="menu-box"><a href="#skills" id="menu-skills"
+						onclick="adjustScroll(event, 'skills')">Fähigkeiten</a></li>
+				<li class="menu-box"><a href="#experiences" id="menu-experiences"
+						onclick="adjustScroll(event, 'experiences')">Berufserfahrung</a></li>
+				<li class="menu-box"><a href="#education" id="menu-education"
+						onclick="adjustScroll(event, 'education')">Ausbildung</a></li>
+				<li class="menu-box"><a href="#certificates" id="menu-certificates"
+						onclick="adjustScroll(event, 'certificates')">Zeugnisse</a></li>
+				<li class="menu-box"><a href="#contact" id="menu-contact"
+						onclick="adjustScroll(event, 'contact')">Kontakt</a></li>
+			</ul>
+		</nav>
+
+
+		<div class="mode-toggle">
+			<button class="light-button active"><i class="ri-sun-line"></i></button>
+			<button class="dark-button"><i class="ri-moon-fill"></i></button>
+			<div class="toggle-indicator"></div>
+		</div>
+
+		<div class="language-toggle">
+			<button id="german" onclick="toggleLanguage('de')">DE</button>
+			<button id="english" onclick="toggleLanguage('en')">EN</button>
+			<div class="toggle-indicator"></div>
+		</div>
+	</header>
+
+	<script>
+		// Set the active class based on the currentLang value
+		document.addEventListener('DOMContentLoaded', function () {
+			const currentLang = document.documentElement.lang; // Example of how to get the current language
+			
+			if (currentLang === 'de') {
+				document.getElementById('german').classList.add('active');
+				document.getElementById('english').classList.remove('active');
+			} else if (currentLang === 'en') {
+				document.getElementById('english').classList.add('active');
+				document.getElementById('german').classList.remove('active');
+			}
+		});
+
+		function adjustScroll(event, targetId) {
+			event.preventDefault(); // Prevent the default jump
+			const target = document.getElementById(targetId);
+
+			// Determine the offset based on the screen size
+			const isMobile = window.innerWidth <= 768; // Adjust the width threshold as per your breakpoint
+			const offset = isMobile ? -150 : -100; // Set offset for mobile and web versions
+
+			const targetPosition = target.getBoundingClientRect().top + window.scrollY + offset;
+
+			// Smooth scroll to adjusted position
+			window.scrollTo({
+				top: targetPosition,
+				behavior: 'smooth'
+			});
+		}
+
+	</script>
+
+	<section class="hero">
+		<!-- Circular photo with beige background -->
+		<div class="photo-frame">
+			<img src="photo.jpg" alt="Venkata Srikanth" class="hero-photo">
+		</div>
+
+		<div class="title">
+			<h1>Berechnungsingenieur</h1>
+			<p>Fahrzeugsicherheit | Passive Sicherheit | FEM- & Crash-Simulationen</p>
+		</div>
+	</section>
+
+	<div class="container">
+		<!-- Left Column -->
+		<div class="left-column">
+
+			<section id="about" class="left-section">
+				<h2>Über mich</h2>
+				<div class="about-me">
+					<img src="placeholder.jpg" onload="loadAboutMeContent()" style="display:none;">
+				</div>
+
+			</section>
+			<section id="skills" class="left-section">
+				<h2>Fähigkeiten</h2>
+				<h3>CAE Software-Kenntnisse</h3>
+				<div class="skills">
+					<div class="skill">
+						<h3>LS-DYNA</h3>
+						<p id="ls-dyna-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>LS-PrePost</h3>
+						<p id="ls-prepost-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>ANSA</h3>
+						<p id="ansa-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>HyperWorks</h3>
+						<p id="hypermesh-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Animator</h3>
+						<p id="animator-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>META</h3>
+						<p id="meta-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>LoCo</h3>
+						<p id="loco-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>ABAQUS</h3>
+						<p id="abaqus-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>ANSYS</h3>
+						<p id="ansys-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Oasys PRIMER</h3>
+						<p id="primer-rating">Star rating</p>
+					</div>
+				</div>
+				<h3>CAD Software-Kenntnisse</h3>
+				<div class="skills">
+					<div class="skill">
+						<h3>CATIA v5</h3>
+						<p id="catia-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>PRO-E</h3>
+						<p id="proe-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>AutoCAD</h3>
+						<p id="autocad-rating">Star rating</p>
+					</div>
+				</div>
+				<h3>Programm.-Kenntnisse u. Sonst.</h3>
+				<div class="skills">
+
+					<div class="skill">
+						<h3>Python</h3>
+						<p id="python-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Java</h3>
+						<p id="java-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>MS Office</h3>
+						<p id="msoffice-rating">Star rating</p>
+					</div>
+				</div>
+				<h3>Soft Skills</h3>
+				<div class="skills">
+
+					<div class="skill">
+						<h3>Teamsfähigkeit</h3>
+						<p id="softskill-1-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Strukturierte Arbeitsweise</h3>
+						<p id="softskill-2-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Kommunikationsfähigkeit</h3>
+						<p id="softskill-3-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Technikbegeisterung</h3>
+						<p id="softskill-4-rating">Star rating</p>
+					</div>
+				</div>
+				<h3>Sprachen</h3>
+				<div class="skills">
+
+					<div class="skill">
+						<h3>Deutsch - B1</h3>
+						<p id="german-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>English</h3>
+						<p id="english-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Telugu</h3>
+						<p id="telugu-rating">Star rating</p>
+					</div>
+
+					<div class="skill">
+						<h3>Hindi</h3>
+						<p id="hindi-rating">Star rating</p>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Right Column (with Timeline) -->
+		<div class="right-column">
+			<section id="experiences" class="right-section">
+				<h2>Berufserfahrung</h2>
+				<h3>(Klicken Sie auf die Boxen unten)</h3>
+				<div class="experiences">
+					<!-- Experience 1 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Mai 2024</span> bis <span class="timeline-end">Aug. 2024</span>
+							</div>
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="experience1" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>Berechnungsingenieur - Fahrzeugsicherheit</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>
+						
+					</div>
+
+					<!-- Experience 2 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Nov. 2022</span> bis <span class="timeline-end">Feb. 2024</span>
+							</div>
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="experience2" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>CAE Trainee (Crash-Simulationen) - Sitzsystem</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>
+						
+					</div>
+
+					<!-- Experience 3 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Feb. 2022</span> bis <span class="timeline-end">Okt. 2022</span>
+							</div>
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="experience3" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>Masterand: FEM-Simulation und Materialmodellierung</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>
+						
+					</div>
+
+					<!-- Experience 4 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Apr. 2021</span> bis <span class="timeline-end">März 2022</span>
+							</div>
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="experience4" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>Mini-Projekt und studentische Hilfskraft</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>
+							
+					</div>
+
+					<!-- Experience 5 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Nov. 2014</span> bis <span class="timeline-end">Sept. 2019</span>
+							</div>
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="experience5" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>Senior Design Engineer</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>
+						
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Education -->
+			<section id="education" class="right-section">
+				<h2>Ausbildung</h2>
+				<h3>(Klicken Sie auf die Boxen unten)</h3>
+				<div class="experiences">
+					<!-- Education 1 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Okt. 2019</span> bis <span class="timeline-end">Okt. 2022</span>
+							</div>
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="education1" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>M.Sc. CAME (Computer Aided Mechanical Engineering)</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Education 2 -->
+					<div class="timeline-item">
+						<div class="timeline-group">
+							<div class="timeline-date">
+								<span class="timeline-start">Okt. 2010</span> bis <span class="timeline-end">Jun. 2014</span>
+							</div>
+						
+							<div class="timeline-line"></div>
+						</div>
+						<div class="timeline-box" data-page-id="education2" onclick="openExperience(this)">
+							<div class="timeline-content">
+								<h3>B.Tech. Maschinenbau</h3>
+								<p class="company-name"></p>
+								<p class="location"></p>
+							</div>
+						</div>	
+					</div>
+
+				</div>
+			</section>
+			<!-- Certificates -->
+			<section id="certificates" class="right-section">
+				<h2>Zeugnisse</h2>
+				<h3>(Klicken Sie auf die Boxen unten)</h3>
+				<div class="certificates">
+
+					<!-- Certificate 1 -->
+					<div class="certificate-box" data-page-id="certificate1" onclick="openCertificate(this)">
+						<h3>Oasys PRIMER</h3>
+						<p>Instructor-led course</p>
+					</div>
+
+					<!-- Certificate 2 -->
+					<div class="certificate-box" data-page-id="certificate2" onclick="openCertificate(this)">
+						<h3>Arbeitszeugnis</h3>
+						<p>Kube GmbH Ingenieurbüro</p>
+					</div>
+
+					<!-- Certificate 3 -->
+					<div class="certificate-box" data-page-id="certificate3" onclick="openCertificate(this)">
+						<h3>LS-DYNA, HyperMesh and Seating System CAE</h3>
+						<p>ELENO-ELC</p>
+					</div>
+
+					<!-- Certificate 4 -->
+					<div class="certificate-box" data-page-id="certificate4" onclick="openCertificate(this)">
+						<h3>Arbeitszeugnis</h3>
+						<p>Kautex Textron GmbH</p>
+					</div>
+
+					<!-- Certificate 5 -->
+					<div class="certificate-box" data-page-id="certificate5" onclick="openCertificate(this)">
+						<h3>M.Sc. CAME</h3>
+						<p>RWTH Aachen</p>
+					</div>
+
+					<!-- Certificate 6 -->
+					<div class="certificate-box" data-page-id="certificate6" onclick="openCertificate(this)">
+						<h3>B.Tech</h3>
+						<p>GMR Institute of Technology</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!-- Contact Section -->
+	<section id="contact" class="section contact">
+		<h2>Kontakt</h2>
+		<div id="contact-content">
+			<table style="border-collapse: collapse;">
+				<tr>
+					<td><strong>E-Mail:</strong></td>
+					<td><a
+							href="mailto:venkatasrikantharyasomayajula@gmail.com">venkatasrikantharyasomayajula@gmail.com</a>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Telefon:</strong></td>
+					<td>+49 159 06474204</td>
+				</tr>
+				<tr>
+					<td><strong>LinkedIn:</strong></td>
+					<td><a href="https://www.linkedin.com/in/venkatasrikantharyasomayajula/" target="_blank">Srikanth -
+							LinkedIn</a></td>
+				</tr>
+				<tr>
+					<td><strong>Xing:</strong></td>
+					<td><a href="https://www.xing.com/profile/VenkataSrikanth_Aryasomayajula/" target="_blank">Srikanth
+							- Xing</a></td>
+				</tr>
+				<tr>
+					<td><strong>Anschrift:</strong></td>
+					<td>71229 Leonberg, Deutschland</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+
+	<!-- Footer Section -->
+	<footer class="full-width">
+		&copy; 2024 Venkata Srikanth Aryasomayajula. Alle Rechte vorbehalten.
+	</footer>
+
+	<!-- Floating Note -->
+	<!--<div id="floating-note" class="floating-note">
+		<p>- Switch to English if you prefer<br>- Die Boxen auf der rechten Seite der Webseite sind clickable</p>
+	</div>-->
+
+	<!-- Back to Top Button -->
+	<button id="scroll-to-top" class="scroll-top-btn" onclick="scrollToTop()">
+		<i class="fas fa-chevron-up"></i>
+	</button>
+	<script src="script.js"></script>
+</body>
+
+</html>
