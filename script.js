@@ -1,6 +1,15 @@
 // Set German as the default language on page load
 document.addEventListener("DOMContentLoaded", () => {
-    toggleLanguage('de'); // Initialize language to German
+    const langFromURL = getLangFromURL();
+
+    // Fallback to German if no language is specified
+    if (langFromURL === 'en' || langFromURL === 'de') {
+        toggleLanguage(langFromURL);
+    } else {
+        toggleLanguage('de'); // Default
+    }
+	
+	//toggleLanguage('de'); // Initialize language to German
 
     // Set up Intersection Observer for section visibility
     const sections = document.querySelectorAll(".section");
@@ -15,6 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => observer.observe(section));
 });
 
+// Function to get the lang parameter from the URL
+function getLangFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('lang');
+}
 
 let currentLang;
 
